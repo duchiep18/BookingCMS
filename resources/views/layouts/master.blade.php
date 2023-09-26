@@ -13,8 +13,6 @@
 </main>
 </body>
 
-
-
 <!--   Core JS Files   -->
 <script src="../backend/js/core/popper.min.js"></script>
 <script src="../backend/js/core/bootstrap.min.js"></script>
@@ -101,7 +99,6 @@
             },
         },
     });
-
 
     var ctx2 = document.getElementById("chart-line").getContext("2d");
 
