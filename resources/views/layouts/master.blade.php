@@ -10,6 +10,7 @@
     @include('layouts.header')
     @yield('content')
     @include('layouts.footer')
+
 </main>
 </body>
 
@@ -281,13 +282,6 @@
 @stack('js')
 <script src="../assets/js/material-dashboard.min.js?v=3.1.0"></script>
 <!-- Scripts -->
-<script>
-    $( '#select2' ).select2( {
-        theme: "bootstrap-5",
-        width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
-        placeholder: $( this ).data( 'placeholder' ),
-    } );
-</script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.full.min.js"></script>

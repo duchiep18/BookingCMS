@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 class CompanyController extends Controller
 {
     public function index(){
-        return view('backend.company.list');
+        $companies = Company::all();
+        return view('backend.company.list',compact('companies'));
     }
     public function create(){
         return view('backend.company.create');
