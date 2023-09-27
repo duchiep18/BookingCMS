@@ -117,7 +117,10 @@ body {
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-
+/*Custom CSS*/
+.mr{
+    margin-left: 2rem;
+}
 hr {
   margin: 1rem 0;
   color: inherit;
@@ -22679,9 +22682,9 @@ label,
   transition: 0.2s ease all;
 }
 
-.form-control {
-  border: none;
-}
+/*.form-control {*/
+/*  border: none;*/
+/*}*/
 
 .form-control.is-invalid {
   border: 1px solid #d2d6da;

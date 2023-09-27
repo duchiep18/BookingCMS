@@ -26,14 +26,14 @@ CREATE TABLE `company` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `adress` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL,
   `total_staff` int(11) DEFAULT NULL,
   `status` enum('active','inactive') COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,6 +42,7 @@ CREATE TABLE `company` (
 
 LOCK TABLES `company` WRITE;
 /*!40000 ALTER TABLE `company` DISABLE KEYS */;
+INSERT INTO `company` VALUES (1,'EcapHolding','ecap@gmail.com','Zen Tower ngõ 12 Khuất Duy Tiến',0,10,'active','2023-09-27 03:21:38','2023-09-27 04:05:51'),(2,'VietsoftPro','vietsoft@gmail.com','Ngõ 81 Láng Hạ',0,5,'inactive','2023-09-27 03:37:29','2023-09-27 03:37:29'),(3,'EcapMBox','mbox@gmail.com','Tầng 13 ngõ 12 Khuất Duy Tiến',0,10,'active','2023-09-27 03:38:17','2023-09-27 03:38:17');
 /*!40000 ALTER TABLE `company` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -57,7 +58,7 @@ CREATE TABLE `migrations` (
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -66,7 +67,7 @@ CREATE TABLE `migrations` (
 
 LOCK TABLES `migrations` WRITE;
 /*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
-INSERT INTO `migrations` VALUES (1,'2014_10_12_000000_create_users_table',1),(2,'2014_10_12_100000_create_password_resets_table',1),(3,'2019_12_14_000001_create_personal_access_tokens_table',1),(4,'2023_09_26_024506_create_company_table',1),(5,'2023_09_26_041504_alter_table_users',2);
+INSERT INTO `migrations` VALUES (1,'2014_10_12_000000_create_users_table',1),(2,'2014_10_12_100000_create_password_resets_table',1),(3,'2019_12_14_000001_create_personal_access_tokens_table',1),(4,'2023_09_26_024506_create_company_table',1),(5,'2023_09_26_041504_alter_table_users',2),(6,'2023_09_27_102534_alter_table_company',3),(7,'2023_09_27_102940_alter_table_company',4);
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -143,9 +144,9 @@ CREATE TABLE `users` (
   `phone_number` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `photo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `role` enum('admin','user','manager') COLLATE utf8mb4_unicode_ci NOT NULL,
-  `status` enum('active','inactive') COLLATE utf8mb4_unicode_ci NOT NULL,
-  `company_id` bigint(20) NOT NULL,
+  `role` enum('admin','user','manager') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'admin',
+  `status` enum('active','inactive') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'active',
+  `company_id` bigint(20) DEFAULT NULL,
   `date_start_work` datetime DEFAULT NULL,
   `salary` bigint(20) DEFAULT NULL,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -153,7 +154,7 @@ CREATE TABLE `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -162,7 +163,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'admin','admin@gmail.com',NULL,'@admin','male',NULL,NULL,NULL,'admin','active',2,NULL,NULL,NULL,'2023-09-26 00:37:37','2023-09-26 00:37:37'),(3,'admin12','admin12@gmail.com',NULL,'$2y$10$sESdImXUdy9TcT0vgQYP6ubUVIGOld8Ueij0rIV8q5R5OhUXJj/x6','male',NULL,NULL,NULL,'admin','active',2,NULL,NULL,NULL,'2023-09-26 04:08:19','2023-09-26 04:08:19');
+INSERT INTO `users` VALUES (1,'admin','admin@gmail.com',NULL,'@admin','male',NULL,NULL,NULL,'admin','active',2,NULL,NULL,NULL,'2023-09-26 00:37:37','2023-09-26 00:37:37'),(3,'admin12','admin12@gmail.com',NULL,'$2y$10$sESdImXUdy9TcT0vgQYP6ubUVIGOld8Ueij0rIV8q5R5OhUXJj/x6','male',NULL,NULL,NULL,'admin','active',2,NULL,NULL,NULL,'2023-09-26 04:08:19','2023-09-26 04:08:19'),(4,'hiepnd','admin666@gmail.com',NULL,'$2y$10$ZXuhbzJzHT8HWVHmb3G.ieNFQ/Hmw784xWL.gEUxQdpJxKKTurRmm',NULL,NULL,NULL,NULL,'admin','active',NULL,NULL,NULL,NULL,'2023-09-26 19:30:08','2023-09-26 19:30:08'),(5,'demo','demo@gmail.com',NULL,'$2y$10$i5O8yZ3nppy45sJUctW4dO54UCvsP8/f5blIdG9OnbV8j2gPM.ZQa',NULL,NULL,NULL,NULL,'admin','active',NULL,NULL,NULL,NULL,'2023-09-26 19:33:55','2023-09-26 19:33:55');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -179,4 +180,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-09-26 18:41:51
+-- Dump completed on 2023-09-27 18:22:07
