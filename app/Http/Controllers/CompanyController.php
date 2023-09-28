@@ -71,14 +71,12 @@ class CompanyController extends Controller
         $company->user_id = $manager_id;
         $company->status = $status;
         $company->save();
-        return redirect()->route('listCompany');
-
+        return redirect()->route('listCompany')->with('success','Cập nhật thông tin thành công');
     }
 
     public function destroy($id){
         $company=Company::find($id);
         $company->delete();
-
         return redirect()->route('listCompany');
     }
 }

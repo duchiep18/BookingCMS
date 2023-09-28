@@ -16,11 +16,10 @@
                             <div class="table-responsive p-0">
                                 <table class="table align-items-center mb-0">
                                     <thead>
-                                    <tr>
+                                    <tr style="text-align: center">
                                         <th scope="col">#</th>
                                         <th scope="col">Tên công ty</th>
                                         <th scope="col">Địa chỉ</th>
-                                        <th scope="col">Tổng số nhân viên</th>
                                         <th scope="col">Quản lý</th>
                                         <th scope="col">Trạng thái</th>
                                         <th scope="col">Tác vụ</th>
@@ -29,16 +28,14 @@
                                     </thead>
                                     <tbody>
                                     @foreach($companies as $company)
-                                        <tr>
+                                        <tr style="text-align: center">
                                             <th colspan="1">{{$company->id}}</th>
                                             <td>{{$company->name}}
                                             </td>
                                             <td>
                                                 {{$company->address}}
                                             </td>
-                                            <td>
-                                                {{$company->total_staff}}
-                                            </td>
+
                                             <td>
                                                 {{$company->user_id}}
                                             </td>
@@ -46,9 +43,9 @@
                                                 {{$company->status}}
                                             </td>
                                             <td class="align-middle">
-                                                <a href="{{ route('editCompany', $company->id) }}"
+                                                <a href="{{ route('editCompany', $company->id)}}"
                                                    class="btn btn-warning btn-lg float-left mr-1"><i class="fas fa-edit"></i></a>
-                                                <form method="POST" action="{{ route('destroyCompany', $company->id) }}"
+                                                <form method="POST" action="{{ route('destroyCompany', $company->id)}}"
                                                       role="form">
                                                     @csrf
                                                     @method('delete')

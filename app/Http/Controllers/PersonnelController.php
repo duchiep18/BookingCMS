@@ -95,4 +95,10 @@ class PersonnelController extends Controller
         $personnel->save();
         return redirect()->route('listPsn')->with('success','Cập nhật nhân sự thành công');
     }
+
+    public function destroy($id){
+        $personnel=User::find($id);
+        $personnel->delete();
+        return redirect()->route('listCompany');
+    }
 }

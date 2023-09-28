@@ -16,7 +16,7 @@
                             <div class="table-responsive p-0">
                                 <table class="table align-items-center mb-0">
                                     <thead>
-                                    <tr>
+                                    <tr style="text-align: center">
                                         <th scope="col">#</th>
                                         <th scope="col">Tên nhân sự</th>
                                         <th scope="col">Email</th>
@@ -24,6 +24,7 @@
                                         <th scope="col">Số điện thoại</th>
                                         <th scope="col">Quyền tài khoản</th>
                                         <th scope="col">Thuộc công ty</th>
+                                        <th scope="col">Ngày bắt đầu làm việc</th>
                                         <th scope="col">Trạng thái</th>
                                         <th scope="col">Tác vụ</th>
                                         <th scope="col"></th>
@@ -31,31 +32,35 @@
                                     </thead>
                                     <tbody>
                                     @foreach($personnels as $personnel)
-                                        <tr>
-                                            <th colspan="1">{{$personnel->id}}</th>
+                                        <tr style="text-align: center">
+                                            <th>{{$personnel->id}}</th>
                                             <td>{{$personnel->username}}
                                             </td>
-                                            <td>
+                                            <td >
                                                 {{$personnel->email}}
                                             </td>
- <td>
+                                            <td>
                                                 {{$personnel->gender}}
                                             </td>
- <td>
+                                            <td>
                                                 {{$personnel->phone_number}}
                                             </td>
- <td>
+                                            <td>
                                                 {{$personnel->role}}
                                             </td>
- <td>
+                                            <td>
                                                 {{$personnel->company_id}}
+                                            </td>
+                                            <td>
+                                                {{$personnel->date_start_work}}
                                             </td>
                                             <td>
                                                 {{$personnel->status}}
                                             </td>
                                             <td class="align-middle">
                                                 <a href="{{ route('editPsn', $personnel->id) }}"
-                                                   class="btn btn-warning btn-lg float-left mr-1"><i class="fas fa-edit"></i></a>
+                                                   class="btn btn-warning btn-lg float-left mr-1"><i
+                                                        class="fas fa-edit"></i></a>
                                                 <form method="POST" action="{{ route('destroyPsn', $personnel->id) }}"
                                                       role="form">
                                                     @csrf
