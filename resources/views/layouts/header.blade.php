@@ -119,20 +119,7 @@
 
 {{--                                    </li>--}}
 {{--                                </ul>--}}
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{Auth::user()->username}}</div>
-                                    <div class="email">{{Auth::user()->email}}</div>
-                                    <button class="dropdown-item" type="button">Action</button>
-                                    <button class="dropdown-item" type="button">Another action</button>
-                                    <span>
-                                        <a href="#">
-                                            <form action="{{ route('logout') }}" method="POST">
-                                                @csrf
-                                                <button type="submit" class="dropdown-item">Đăng xuất</button>
-                                            </form>
-                                        </a>
-                                    </span>
-                             </div>
+
                         </div>
                     </div>
                 </li>

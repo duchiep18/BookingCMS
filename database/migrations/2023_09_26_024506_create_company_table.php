@@ -23,7 +23,6 @@ class CreateCompanyTable extends Migration
             $table->enum('status',['active','inactive']);
             $table->timestamps();
         });
-
     }
 
     /**

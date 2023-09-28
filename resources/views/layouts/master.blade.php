@@ -1,7 +1,8 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
+
+
+
 @include('layouts.head')
 
 <body class="g-sidenav-show  bg-gray-200">
@@ -10,16 +11,15 @@
     @include('layouts.header')
     @yield('content')
     @include('layouts.footer')
-
 </main>
 </body>
 
 <!--   Core JS Files   -->
-<script src="../backend/js/core/popper.min.js"></script>
-<script src="../backend/js/core/bootstrap.min.js"></script>
-<script src="../backend/js/plugins/perfect-scrollbar.min.js"></script>
-<script src="../backend/js/plugins/smooth-scrollbar.min.js"></script>
-<script src="../backend/js/plugins/chartjs.min.js"></script>
+<script src="{{asset('backend/js/core/popper.min.js')}}"></script>
+<script src="{{asset('backend/js/core/bootstrap.min.js')}}"></script>
+<script src="{{asset('backend/js/plugins/perfect-scrollbar.min.js')}}"></script>
+<script src="{{asset('backend/js/plugins/smooth-scrollbar.min.js')}}"></script>
+<script src="{{asset('backend/js/plugins/chartjs.min.js')}}"></script>
 <script>
     var ctx = document.getElementById("chart-bars").getContext("2d");
 
@@ -276,12 +276,10 @@
     }
 </script>
 
-<!-- Github buttons -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
 @stack('js')
-<script src="../assets/js/material-dashboard.min.js?v=3.1.0"></script>
-<!-- Scripts -->
+<script src="{{asset('backend/js/material-dashboard.min.js?v=3.1.0')}}"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.full.min.js"></script>

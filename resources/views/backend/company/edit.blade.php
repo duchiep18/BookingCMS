@@ -3,7 +3,7 @@
 @section('content')
     <div class="container-fluid py-4">
         <h4>Thêm mới công ty</h4>
-        <form action="{{route('updateCompany',$company->id)}}" method="POST" class="form-group">
+        <form action="{{route('updateCompany', $company->id)}}" method="POST" class="form-group">
             @csrf
             @method('put')
             <div class="row mb-1">
@@ -30,12 +30,7 @@
                     <input type="text" name="address" value="{{$company->address}}" class="form-control">
                 </div>
             </div>
-            <div class="row mb-1">
-                <label for="inputPassword3" class="col-sm-2 col-form-label">Tổng số nhân viên:</label>
-                <div class="col-sm-10">
-                    <input type="text" name="totalstaff" value="{{$company->total_staff}}" class="form-control">
-                </div>
-            </div>
+
             <div class="row mb-1">
                 <label for="inputPassword3" class="col-sm-2 col-form-label">Quản trị viên công ty:</label>
                 <div class="col-sm-10">
@@ -55,7 +50,9 @@
                 </div>
             </div>
             <button type="submit" class="btn btn-primary" style="margin-top: 2rem;font-family: 'Font Awesome 5 Pro'">Cập nhật</button>
+            <div>
+            <a class="btn btn-primary" href="{{route('listCompany')}}">Quay lại</a>
+            </div>
         </form>
     </div>
-
 @endsection

@@ -30,9 +30,8 @@
                 </a>
                 <div id="companyCollapse" class="collapse">
                     <ul class="navbar-nav">
-                        <li class="nav-item"><a class="mr text-white" href="#"> Quản lý danh sách công ty</a></li>
+                        <li class="nav-item"><a class="mr text-white" href="{{route('listCompany')}}"> Quản lý danh sách công ty</a></li>
                         <li class="nav-item"><a class="mr text-white" href="{{route('createCompany')}}"> Thêm công ty</a></li>
-                        <li class="nav-item"><a class="mr text-white" href="#"> Thiết lập người quản lý</a></li>
                     </ul>
                 </div>
             </li>
@@ -46,10 +45,8 @@
                 </a>
                 <div id="userCollapse" class="collapse">
                     <ul class="navbar-nav">
-                        <li class="nav-item"><a class="mr text-white" href=""> Quản lý danh sách nhân viên</a></li>
-                        <li class="nav-item"><a class="mr text-white" href=""> Thêm nhân viên mới</a></li>
-                        <li class="nav-item"><a class="mr text-white" href=""> Sửa thông nhân viên</a></li>
-                        <li class="nav-item"><a class="mr text-white" href=""> Thiết lập người quản lý</a></li>
+                        <li class="nav-item"><a class="mr text-white" href="{{route('listPsn')}}"> Quản lý danh sách nhân viên</a></li>
+                        <li class="nav-item"><a class="mr text-white" href="{{route('createPsn')}}"> Thêm nhân viên mới</a></li>
                     </ul>
                 </div>
             </li>

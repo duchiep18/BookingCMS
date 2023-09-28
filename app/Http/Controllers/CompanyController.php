@@ -16,6 +16,8 @@ class CompanyController extends Controller
     public function store(Request $request){
         $request->validate([
             'name'=> 'required',
+            'address'=> 'required',
+            'manager'=> 'required',
             'email'=> 'required|email|unique:company',
             'status'=> 'required'
         ],[
@@ -25,21 +27,20 @@ class CompanyController extends Controller
             'email.unique'=>'Email này đã được sử dụng',
             'status.required'=>'Đây là trường bắt buộc',
         ]);
+
         $name = $request->input('name');
         $email = $request->input('email');
         $address = $request->input('address');
-        $totalstaff = $request->input('totalstaff');
         $manager_id = $request->input('manager');
         $status = $request->input('status');
         $company = new Company();
         $company->name = $name;
         $company->email = $email;
         $company->address = $address;
-        $company->total_staff = $totalstaff;
         $company->user_id = $manager_id;
         $company->status = $status;
         $company->save();
-        return redirect()->back()->withSuccess('Thêm mới công ty thành công');
+        return redirect()->route('listCompany')->with('success','Thêm mới nhân sự thành công');
     }
     public function edit($id){
         $company = Company::find($id);
@@ -70,11 +71,14 @@ class CompanyController extends Controller
         $company->user_id = $manager_id;
         $company->status = $status;
         $company->save();
-        return redirect()->back()->withSuccess('Cập nhật công ty thành công');
+        return redirect()->route('listCompany');
 
     }
 
-    public function destroy(){
+    public function destroy($id){
+        $company=Company::find($id);
+        $company->delete();
 
+        return redirect()->route('listCompany');
     }
 }

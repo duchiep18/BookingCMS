@@ -30,12 +30,6 @@
                 </div>
             </div>
             <div class="row mb-1">
-                <label for="inputPassword3" class="col-sm-2 col-form-label">Tổng số nhân viên:</label>
-                <div class="col-sm-10">
-                    <input type="text" name="totalstaff" class="form-control">
-                </div>
-            </div>
-            <div class="row mb-1">
                 <label for="inputPassword3" class="col-sm-2 col-form-label">Quản trị viên công ty:</label>
                 <div class="col-sm-10">
                     <select class="form-select" name="manager" aria-label="Default select example">

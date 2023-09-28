@@ -13,7 +13,7 @@ class AlterTableUsers extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table){
             $table->enum('gender', ['male','female'])->nullable();
             $table->dateTime('date_start_work')->nullable();
             $table->bigInteger('salary')->nullable();
