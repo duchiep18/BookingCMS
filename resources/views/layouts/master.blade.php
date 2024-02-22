@@ -2,17 +2,36 @@
 <html lang="en">
 
 
-
 @include('layouts.head')
 
 <body class="g-sidenav-show  bg-gray-200">
-    @include('layouts.sidenav')
-<main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
-    @include('layouts.header')
-    @yield('content')
-    @include('layouts.footer')
-</main>
+@include('layouts.sidenav')
+
+    <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
+        @include('layouts.header')
+        @yield('content')
+    </main>
+
 </body>
+
+{{--<div class="modal fade" id="modalImage" tabindex="-1" aria-labelledby="modalImage" aria-hidden="true">--}}
+{{--    <div class="modal-dialog" style="width:100%">--}}
+{{--        <div class="modal-content">--}}
+{{--            <div class="modal-header">--}}
+{{--                <h5 class="modal-title">Thư viện ảnh</h5>--}}
+{{--                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">--}}
+{{--                    <span aria-hidden="true">&times;</span>--}}
+{{--                </button>--}}
+{{--            </div>--}}
+{{--            <div class="modal-body">--}}
+{{--                <iframe--}}
+{{--                    src="{{asset('/filemanager/dialog.php?type=2&editor=ckeditor&akey=&fldr=&field_id=image')}}"--}}
+{{--                    style="width:100%; height:600px; "></iframe>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</div>--}}
+</html>
 
 <!--   Core JS Files   -->
 <script src="{{asset('backend/js/core/popper.min.js')}}"></script>
@@ -20,252 +39,60 @@
 <script src="{{asset('backend/js/plugins/perfect-scrollbar.min.js')}}"></script>
 <script src="{{asset('backend/js/plugins/smooth-scrollbar.min.js')}}"></script>
 <script src="{{asset('backend/js/plugins/chartjs.min.js')}}"></script>
-<script>
-    var ctx = document.getElementById("chart-bars").getContext("2d");
 
-    new Chart(ctx, {
-        type: "bar",
-        data: {
-            labels: ["M", "T", "W", "T", "F", "S", "S"],
-            datasets: [{
-                label: "Sales",
-                tension: 0.4,
-                borderWidth: 0,
-                borderRadius: 4,
-                borderSkipped: false,
-                backgroundColor: "rgba(255, 255, 255, .8)",
-                data: [50, 20, 10, 22, 50, 10, 40],
-                maxBarThickness: 6
-            }, ],
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    display: false,
-                }
-            },
-            interaction: {
-                intersect: false,
-                mode: 'index',
-            },
-            scales: {
-                y: {
-                    grid: {
-                        drawBorder: false,
-                        display: true,
-                        drawOnChartArea: true,
-                        drawTicks: false,
-                        borderDash: [5, 5],
-                        color: 'rgba(255, 255, 255, .2)'
-                    },
-                    ticks: {
-                        suggestedMin: 0,
-                        suggestedMax: 500,
-                        beginAtZero: true,
-                        padding: 10,
-                        font: {
-                            size: 14,
-                            weight: 300,
-                            family: "Roboto",
-                            style: 'normal',
-                            lineHeight: 2
-                        },
-                        color: "#fff"
-                    },
-                },
-                x: {
-                    grid: {
-                        drawBorder: false,
-                        display: true,
-                        drawOnChartArea: true,
-                        drawTicks: false,
-                        borderDash: [5, 5],
-                        color: 'rgba(255, 255, 255, .2)'
-                    },
-                    ticks: {
-                        display: true,
-                        color: '#f8f9fa',
-                        padding: 10,
-                        font: {
-                            size: 14,
-                            weight: 300,
-                            family: "Roboto",
-                            style: 'normal',
-                            lineHeight: 2
-                        },
-                    }
-                },
-            },
-        },
-    });
+{{--<script>--}}
+{{--    CKEDITOR.replace('ckeditor',{--}}
+{{--        filebrowserBrowseUrl : '{{asset("filemanager")}}/dialog.php?type=2&editor=ckeditor&akey=&fldr=',--}}
+{{--        filebrowserUploadUrl : '{{asset("filemanager")}}/dialog.php?type=2&editor=ckeditor&akey=&fldr=',--}}
+{{--        filebrowserImageBrowseUrl : '{{asset("filemanager")}}/dialog.php?type=1&editor=ckeditor&akey=&fldr=',--}}
+{{--        allowedContent:true,--}}
+{{--        shiftEnterMode: CKEDITOR.ENTER_P,--}}
+{{--    });--}}
+{{--    CKEDITOR.replace('ckeditor2',{--}}
+{{--        filebrowserBrowseUrl : '{{asset("filemanager")}}/dialog.php?type=2&editor=ckeditor&akey=&fldr=',--}}
+{{--        filebrowserUploadUrl : '{{asset("filemanager")}}/dialog.php?type=2&editor=ckeditor&akey=&fldr=',--}}
+{{--        filebrowserImageBrowseUrl : '{{asset("filemanager")}}/dialog.php?type=1&editor=ckeditor&akey=&fldr=',--}}
+{{--        allowedContent:true,--}}
+{{--        shiftEnterMode: CKEDITOR.ENTER_P,--}}
+{{--    });--}}
+{{--    CKEDITOR.replace('service',{--}}
+{{--        filebrowserBrowseUrl : '{{asset("filemanager")}}/dialog.php?type=2&editor=ckeditor&akey=&fldr=',--}}
+{{--        filebrowserUploadUrl : '{{asset("filemanager")}}/dialog.php?type=2&editor=ckeditor&akey=&fldr=',--}}
+{{--        filebrowserImageBrowseUrl : '{{asset("filemanager")}}/dialog.php?type=1&editor=ckeditor&akey=&fldr=',--}}
+{{--        allowedContent:true,--}}
+{{--        shiftEnterMode: CKEDITOR.ENTER_P,--}}
+{{--    });--}}
+{{--</script>--}}
 
-    var ctx2 = document.getElementById("chart-line").getContext("2d");
+{{--<script>--}}
+{{--    var modalImage = document.getElementById('modalImage')--}}
+{{--    modalImage.addEventListener('hidden.bs.modal', function () {--}}
+{{--        var img = $('input#image').val();--}}
+{{--        if(img == ''){--}}
+{{--            $('img#show_image').addClass('hidden');--}}
+{{--        }else {--}}
+{{--            $('img#show_image').attr('src', img);--}}
+{{--        }--}}
+{{--    });--}}
 
-    new Chart(ctx2, {
-        type: "line",
-        data: {
-            labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-            datasets: [{
-                label: "Mobile apps",
-                tension: 0,
-                borderWidth: 0,
-                pointRadius: 5,
-                pointBackgroundColor: "rgba(255, 255, 255, .8)",
-                pointBorderColor: "transparent",
-                borderColor: "rgba(255, 255, 255, .8)",
-                borderColor: "rgba(255, 255, 255, .8)",
-                borderWidth: 4,
-                backgroundColor: "transparent",
-                fill: true,
-                data: [50, 40, 300, 320, 500, 350, 200, 230, 500],
-                maxBarThickness: 6
-
-            }],
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    display: false,
-                }
-            },
-            interaction: {
-                intersect: false,
-                mode: 'index',
-            },
-            scales: {
-                y: {
-                    grid: {
-                        drawBorder: false,
-                        display: true,
-                        drawOnChartArea: true,
-                        drawTicks: false,
-                        borderDash: [5, 5],
-                        color: 'rgba(255, 255, 255, .2)'
-                    },
-                    ticks: {
-                        display: true,
-                        color: '#f8f9fa',
-                        padding: 10,
-                        font: {
-                            size: 14,
-                            weight: 300,
-                            family: "Roboto",
-                            style: 'normal',
-                            lineHeight: 2
-                        },
-                    }
-                },
-                x: {
-                    grid: {
-                        drawBorder: false,
-                        display: false,
-                        drawOnChartArea: false,
-                        drawTicks: false,
-                        borderDash: [5, 5]
-                    },
-                    ticks: {
-                        display: true,
-                        color: '#f8f9fa',
-                        padding: 10,
-                        font: {
-                            size: 14,
-                            weight: 300,
-                            family: "Roboto",
-                            style: 'normal',
-                            lineHeight: 2
-                        },
-                    }
-                },
-            },
-        },
-    });
-
-    var ctx3 = document.getElementById("chart-line-tasks").getContext("2d");
-
-    new Chart(ctx3, {
-        type: "line",
-        data: {
-            labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-            datasets: [{
-                label: "Mobile apps",
-                tension: 0,
-                borderWidth: 0,
-                pointRadius: 5,
-                pointBackgroundColor: "rgba(255, 255, 255, .8)",
-                pointBorderColor: "transparent",
-                borderColor: "rgba(255, 255, 255, .8)",
-                borderWidth: 4,
-                backgroundColor: "transparent",
-                fill: true,
-                data: [50, 40, 300, 220, 500, 250, 400, 230, 500],
-                maxBarThickness: 6
-
-            }],
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    display: false,
-                }
-            },
-            interaction: {
-                intersect: false,
-                mode: 'index',
-            },
-            scales: {
-                y: {
-                    grid: {
-                        drawBorder: false,
-                        display: true,
-                        drawOnChartArea: true,
-                        drawTicks: false,
-                        borderDash: [5, 5],
-                        color: 'rgba(255, 255, 255, .2)'
-                    },
-                    ticks: {
-                        display: true,
-                        padding: 10,
-                        color: '#f8f9fa',
-                        font: {
-                            size: 14,
-                            weight: 300,
-                            family: "Roboto",
-                            style: 'normal',
-                            lineHeight: 2
-                        },
-                    }
-                },
-                x: {
-                    grid: {
-                        drawBorder: false,
-                        display: false,
-                        drawOnChartArea: false,
-                        drawTicks: false,
-                        borderDash: [5, 5]
-                    },
-                    ticks: {
-                        display: true,
-                        color: '#f8f9fa',
-                        padding: 10,
-                        font: {
-                            size: 14,
-                            weight: 300,
-                            family: "Roboto",
-                            style: 'normal',
-                            lineHeight: 2
-                        },
-                    }
-                },
-            },
-        },
-    });
-</script>
+{{--    $('#modal-list-image').on('hide.bs.modal', function () {--}}
+{{--        var _imgs = $('input#image_list').val();--}}
+{{--        if(_imgs) {--}}
+{{--            var img_list = $.parseJSON(_imgs);--}}
+{{--            var _html='';--}}
+{{--            for (let i = 0; i < img_list.length; i++) {--}}
+{{--                _html += '<div class="thumbnail" style="margin-left: 10px">';--}}
+{{--                _html += '<img src="'+img_list[i]+'" style="width: 150px;height: 150px" alt="">';--}}
+{{--                _html += '</div>';--}}
+{{--            }--}}
+{{--            // if(img_list){--}}
+{{--            //     $('#show_image_list').addClass('hidden');--}}
+{{--            // }else {--}}
+{{--            $('#show_image_list').html(_html);--}}
+{{--            // }--}}
+{{--        }--}}
+{{--    });--}}
+{{--</script>--}}
 <script>
     var win = navigator.platform.indexOf('Win') > -1;
     if (win && document.querySelector('#sidenav-scrollbar')) {
@@ -283,4 +110,3 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.full.min.js"></script>
-</html>

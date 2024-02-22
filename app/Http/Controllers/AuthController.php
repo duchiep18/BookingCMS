@@ -15,18 +15,31 @@ class AuthController extends Controller
     public function login(){
         return view('backend.dashboard.login');
     }
-
     public function submitLogin (Request $request){
-
-        $login = [
-            'email' => $request->input('email'),
+        $this->validate($request,[
+           'username' => 'required',
+           'password' => 'required'
+        ],[
+            'username.required' => 'Đây là trường bắt buộc, làm ơn hãy nhập !',
+            'password.required' => 'Đây là trường bắt buộc, làm ơn hãy nhập !',
+        ]);
+        if(Auth::attempt([
+            'username' => $request->input('username'),
             'password' => $request->input('password'),
-        ];
-//        dd($login);
-        if(Auth::attempt($login))
+            'role' => ('admin'),
+        ],$request->input('rememberMe')))
         {
-            return redirect('dashboard')->withSuccess('Hi Boss !');
-        }else{
+            return redirect()->route('dashboard')->withSuccess('Hi Boss !');
+        }elseif(Auth::attempt([
+            'username' => $request->input('username'),
+            'password' => $request->input('password'),
+            'role' => ('user'),
+        ])){
+            Session::flash('error','You do not have any permission to access this page!');
+            return redirect()->route('home');
+        }
+        else{
+            Session::flash('error','Email or Password maybe is incorrect ! Please check again !');
             return redirect()->back();
         }
     }
@@ -48,9 +61,11 @@ class AuthController extends Controller
         $email = $request->input('email');
         $username = $request->input('username');
         $password = $request->input('password');
+        $role='user';
         $newUser = new User;
         $newUser->email = $email;
         $newUser->username = $username;
+        $newUser->role = $role;
         $newUser->password = bcrypt($password);
         $newUser->save();
         return redirect()->route('login')->withSuccess('Chúc mừng bạn đã đăng ký thành công');

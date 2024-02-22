@@ -16,7 +16,7 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `company`
+-- Table structure for table `hotel`
 --
 
 DROP TABLE IF EXISTS `company`;
@@ -37,13 +37,13 @@ CREATE TABLE `company` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `company`
+-- Dumping data for table `hotel`
 --
 
 LOCK TABLES `company` WRITE;
-/*!40000 ALTER TABLE `company` DISABLE KEYS */;
+/*!40000 ALTER TABLE `hotel` DISABLE KEYS */;
 INSERT INTO `company` VALUES (1,'EcapHolding','ecap@gmail.com','Zen Tower ngõ 12 Khuất Duy Tiến',0,10,'active','2023-09-27 03:21:38','2023-09-27 04:05:51'),(2,'VietsoftPro','vietsoft@gmail.com','Ngõ 81 Láng Hạ',0,5,'inactive','2023-09-27 03:37:29','2023-09-27 03:37:29'),(3,'EcapMBox','mbox@gmail.com','Tầng 13 ngõ 12 Khuất Duy Tiến',0,10,'active','2023-09-27 03:38:17','2023-09-27 03:38:17');
-/*!40000 ALTER TABLE `company` ENABLE KEYS */;
+/*!40000 ALTER TABLE `hotel` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --

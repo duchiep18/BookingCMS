@@ -89,9 +89,14 @@
                         <li>
                             <a class="dropdown-item" href="#">Another action</a>
                         </li>
-                        <li><hr class="dropdown-divider" /></li>
+                        <li><hr class="dropdown-divider"/></li>
                         <li>
-                            <a class="dropdown-item" href="#">Something else here</a>
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> {{ __('Logout') }}
+                            </a>
+
                         </li>
                     </ul>
                 </li>

@@ -7,78 +7,125 @@
         <a class="navbar-brand m-0" href="{{route('dashboard')}}"
            target="_blank">
             <img src="{{asset('frontend/img/logo-ct.png')}}" class="navbar-brand-img h-100" alt="main_logo">
-            <span class="ms-1 font-weight-bold text-white">Quản lý nhân viên</span>
+            <span class="ms-1 font-weight-bold text-white">Booking CMS</span>
         </a>
     </div>
     <hr class="horizontal light mt-0 mb-2">
     <div class="collapse navbar-collapse w-auto" id="sidenav-collapse-main">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link text-white active bg-gradient-primary" href="{{route('dashboard')}}">
+                <a class="btn nav-link text-white active bg-gradient-primary" href="{{route('dashboard')}}">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="material-icons opacity-10">dashboard</i>
                     </div>
-                    <span class="nav-link-text ms-1">Trang chủ</span>
+                    <span class="nav-link-text ms-1">Dashboard</span>
                 </a>
             </li>
             <li class="nav-item" style="margin-top:1rem">
-                <a class="btn nav-link text-white active bg-gradient-primary" data-bs-toggle="collapse"
-                   href="#companyCollapse" aria-expanded="false"
-                   aria-controls="companyCollapse">
+                <a class="btn nav-link text-white active bg-gradient-primary" role="button"
+                   href="{{route('file-manager')}}" >
+                    <i class="material-icons opacity-10">image</i>
+                    Media
+                </a>
+            </li>
+            <li class="nav-item" style="margin-top:1rem">
+                <a class="btn nav-link text-white active bg-gradient-primary" data-bs-toggle="collapse" role="button"
+                   href="#bannerCollapse" aria-expanded="false"
+                   aria-controls="bannerCollapse">
+                    <i class="material-icons opacity-10">image</i>
+                    Banners
+                </a>
+                <div id="bannerCollapse" class="collapse" >
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="mr text-white" href="{{route('banner.index')}}"> Banners list</a></li>
+                        <li class="nav-item"><a class="mr text-white" href="{{route('banner.create')}}"> Add banner</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item" style="margin-top:1rem">
+                <a class="btn nav-link text-white active bg-gradient-primary" data-bs-toggle="collapse" role="button"
+                   href="#hotelsCollapse" aria-expanded="false"
+                   aria-controls="hotelsCollapse">
                     <i class="material-icons opacity-10">business</i>
-                    <span class="nav-link-text ms-1">Quản lý công ty</span>
+                    Manage Hotels
                 </a>
-                <div id="companyCollapse" class="collapse">
+                <div id="hotelsCollapse" class="collapse" >
                     <ul class="navbar-nav">
-                        <li class="nav-item"><a class="mr text-white" href="{{route('listCompany')}}"> Quản lý danh sách công ty</a></li>
-                        <li class="nav-item"><a class="mr text-white" href="{{route('createCompany')}}"> Thêm công ty</a></li>
+                        <li class="nav-item"><a class="mr text-white" href="{{route('hotel.index')}}"> Hotels list</a></li>
+                        <li class="nav-item"><a class="mr text-white" href="{{route('hotel.create')}}"> Add hotell</a></li>
                     </ul>
                 </div>
             </li>
 
             <li class="nav-item" style="margin-top:1rem">
                 <a class="btn nav-link text-white active bg-gradient-primary" data-bs-toggle="collapse"
-                   href="#userCollapse" aria-expanded="false"
-                   aria-controls="companyCollapse">
+                   href="#roomlevelsCollapse" aria-expanded="false"
+                   aria-controls="roomlevelsCollapse">
+                    <i class="material-icons opacity-10">folder</i>
+                    <span class="nav-link-text ms-1">Manage Room Levels</span>
+                </a>
+                <div id="roomlevelsCollapse" class="collapse">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="mr text-white" href="{{route('room_level.index')}}"> Room levels list</a></li>
+                        <li class="nav-item"><a class="mr text-white" href="{{route('room_level.create')}}"> Add room level</a></li>
+                    </ul>
+                </div>
+
+            </li>
+            <li class="nav-item" style="margin-top:1rem">
+                <a class="btn nav-link text-white active bg-gradient-primary" data-bs-toggle="collapse"
+                   href="#roomsCollapse" aria-expanded="false"
+                   aria-controls="roomsCollapse">
+                    <i class="material-icons opacity-10">business</i>
+                    <span class="nav-link-text ms-1">Manage Rooms </span>
+                </a>
+                <div id="roomsCollapse" class="collapse">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="mr text-white" href="{{route('room.index')}}"> Rooms list</a></li>
+                        <li class="nav-item"><a class="mr text-white" href="{{route('room.create')}}"> Add room </a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item" style="margin-top:1rem">
+                <a class="btn nav-link text-white active bg-gradient-primary" data-bs-toggle="collapse"
+                   href="#locationsCollapse" aria-expanded="false"
+                   aria-controls="locationsCollapse">
+                    <i class="material-icons opacity-10">location_on</i>
+                    <span class="nav-link-text ms-1">Manage Locations </span>
+                </a>
+                <div id="locationsCollapse" class="collapse">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="mr text-white" href="{{route('location.index')}}"> Locations list</a></li>
+                        <li class="nav-item"><a class="mr text-white" href="{{route('location.create')}}"> Add location </a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="nav-item" style="margin-top:1rem">
+                <a class="btn nav-link text-white active bg-gradient-primary" data-bs-toggle="collapse"
+                   href="#servicesCollapse" aria-expanded="false"
+                   aria-controls="servicesCollapse">
                     <i class="material-icons opacity-10">people</i>
-                    <span class="nav-link-text ms-1">Quản lý nhân sự</span>
+                    <span class="nav-link-text ms-1">Manage Users </span>
                 </a>
-                <div id="userCollapse" class="collapse">
+                <div id="servicesCollapse   " class="collapse">
                     <ul class="navbar-nav">
-                        <li class="nav-item"><a class="mr text-white" href="{{route('listPsn')}}"> Quản lý danh sách nhân viên</a></li>
-                        <li class="nav-item"><a class="mr text-white" href="{{route('createPsn')}}"> Thêm nhân viên mới</a></li>
+                        <li class="nav-item"><a class="mr text-white" href=""> Users list</a></li>
                     </ul>
                 </div>
             </li>
 
-            <li class="nav-item" style="margin-top:1rem">
-                <a class="btn nav-link text-white active bg-gradient-primary" data-bs-toggle="collapse"
-                   href="#salaryCollapse" aria-expanded="false"
-                   aria-controls="companyCollapse">
-                    <i class="material-icons opacity-10">calendar_month</i>
-                    <span class="nav-link-text ms-1">Quản lý chấm công</span>
-                </a>
-                <div id="salaryCollapse" class="collapse">
-                    <ul class="navbar-nav">
-                        <li class="nav-item"><a class="mr text-white" href=""> Quản lý danh sách chấm công</a></li>
-                        <li class="nav-item"><a class="mr text-white" href=""> Chấm công</a></li>
-                        <li class="nav-item"><a class="mr text-white" href=""> Sửa thông tin chấm công</a></li>
-                        <li class="nav-item"><a class="mr text-white" href=""> Xuất file báo cáo</a></li>
-                    </ul>
-                </div>
-            </li>
 
             <li class="nav-item">
                 <a class="nav-link text-white " href="../pages/notifications.html">
                     <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="material-icons opacity-10">notifications</i>
                     </div>
-                    <span class="nav-link-text ms-1">Notifications</span>
+                    <span class="nav-link-text ms-1">Booking Orders</span>
                 </a>
             </li>
             <li class="nav-item mt-3">
-                <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Quản lý hệ
-                    thống</h6>
+                <h6 class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8">Manage User</h6>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white " href="../pages/profile.html">
@@ -93,3 +140,4 @@
     </div>
 
 </aside>
+
